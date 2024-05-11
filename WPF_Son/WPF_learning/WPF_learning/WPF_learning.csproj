@@ -89,6 +89,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="..\..\..\ARC.tab\ARC.panel\Update.smartbutton\ExtensionsWindow.xaml">
+      <Link>ExtensionsWindow.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="..\..\..\ARC.tab\Properties.panel\Column1.stack\Thuộc tính.pulldown\View đang áp dụng viewtemplate được chọn.pushbutton\OwnerViewTemplate.xaml">
       <Link>OwnerViewTemplate.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
