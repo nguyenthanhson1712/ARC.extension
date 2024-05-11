@@ -1,4 +1,4 @@
-#pylint: disable=E0401,W0703,W0613,C0103,C0111
+
 import re
 from pyrevit import framework
 from pyrevit import coreutils
@@ -251,7 +251,7 @@ class ExtensionsWindow(forms.WPFWindow):
             ext_pkg_item = ext_pkg_items[0]
             if ext_pkg_item.ext_pkg.is_installed:
                 # Action Button: Install
-                self.hide_element(self.ext_install_b)
+                # self.hide_element(self.ext_install_b)
 
                 # Action Button: Remove
                 if ext_pkg_item.ext_pkg.builtin:
@@ -395,6 +395,8 @@ class ExtensionsWindow(forms.WPFWindow):
         """Installs the selected extension, then reloads pyRevit
         """
         # print (self.selected_pkg.ext_pkg)
+        extpkgs.remove(self.selected_pkg.ext_pkg)
+        call_reload()
         try:
             extpkgs.install(self.selected_pkg.ext_pkg,
                             sender.install_path)
