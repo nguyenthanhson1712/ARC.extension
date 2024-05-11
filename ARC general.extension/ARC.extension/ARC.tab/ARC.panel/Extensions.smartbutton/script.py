@@ -1,4 +1,4 @@
-
+#pylint: disable=E0401,W0703,W0613,C0103,C0111
 import re
 from pyrevit import framework
 from pyrevit import coreutils
@@ -12,6 +12,7 @@ from pyrevit.userconfig import user_config
 import pyrevitcore_globals
 # module_path = pyrevitcore_globals.__file__
 # print module_path
+
 logger = script.get_logger()
 class ExtensionPackageListItem:
     """Extension object that is used in Extensions list ui.
@@ -133,7 +134,6 @@ class ExtensionsWindow(forms.WPFWindow):
 
         #pylint: disable=E1101,W0201
         for ext_dir in ext_dirs_list:
-            ext_dir = "C:\Users\ADMIN\AppData\Roaming\pyRevit-Master\extensions"
             ext_dir_install_menu_item = InstallPackageMenuItem()
             ext_dir_install_menu_item.install_path = ext_dir
             ext_dir_install_menu_item.Header = \
@@ -251,7 +251,7 @@ class ExtensionsWindow(forms.WPFWindow):
             ext_pkg_item = ext_pkg_items[0]
             if ext_pkg_item.ext_pkg.is_installed:
                 # Action Button: Install
-                # self.hide_element(self.ext_install_b)
+                self.hide_element(self.ext_install_b)
 
                 # Action Button: Remove
                 if ext_pkg_item.ext_pkg.builtin:
@@ -395,8 +395,6 @@ class ExtensionsWindow(forms.WPFWindow):
         """Installs the selected extension, then reloads pyRevit
         """
         # print (self.selected_pkg.ext_pkg)
-        extpkgs.remove(self.selected_pkg.ext_pkg)
-        call_reload()
         try:
             extpkgs.install(self.selected_pkg.ext_pkg,
                             sender.install_path)
@@ -439,7 +437,6 @@ def open_ext_dirs_in_explorer(ext_dirs_list):
     """
 
     for ext_dir in ext_dirs_list:
-        ext_dir = "C:\Users\ADMIN\AppData\Roaming\pyRevit-Master\extensions"
         coreutils.open_folder_in_explorer(ext_dir)
 
 
