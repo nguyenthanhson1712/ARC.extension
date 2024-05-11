@@ -12,7 +12,6 @@ from pyrevit.userconfig import user_config
 import pyrevitcore_globals
 # module_path = pyrevitcore_globals.__file__
 # print module_path
-
 logger = script.get_logger()
 class ExtensionPackageListItem:
     """Extension object that is used in Extensions list ui.
@@ -134,6 +133,7 @@ class ExtensionsWindow(forms.WPFWindow):
 
         #pylint: disable=E1101,W0201
         for ext_dir in ext_dirs_list:
+            ext_dir = "C:\Users\ADMIN\AppData\Roaming\pyRevit-Master\extensions\ARC general.extension"
             ext_dir_install_menu_item = InstallPackageMenuItem()
             ext_dir_install_menu_item.install_path = ext_dir
             ext_dir_install_menu_item.Header = \
@@ -439,6 +439,7 @@ def open_ext_dirs_in_explorer(ext_dirs_list):
     """
 
     for ext_dir in ext_dirs_list:
+        ext_dir = "C:\Users\ADMIN\AppData\Roaming\pyRevit-Master\extensions\ARC general.extension"
         coreutils.open_folder_in_explorer(ext_dir)
 
 
