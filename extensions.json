@@ -4,7 +4,7 @@
             "builtin": "False",
             "type": "extension",
             "rocket_mode_compatible": "False",
-            "name": "ARC general",
+            "name": "ARC",
             "description": "ARC on github",
             "author": "Nguyễn Thanh Sơn",
             "author_profile": "",
